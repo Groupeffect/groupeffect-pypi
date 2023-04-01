@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+    pypi:
+        build:
+            context: "./framework/pypi"
+            dockerfile: "Dockerfile"
+
+        volumes:
+            - "./framework/pypi/app/:/app/"
+        command: "bash /app/run.sh"
