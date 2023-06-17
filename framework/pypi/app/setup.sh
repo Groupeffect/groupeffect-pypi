@@ -11,4 +11,4 @@ python /app/package/manage.py
 # for django 
 cd /app/package && python setup.py sdist
 # create package manually
-python -m twine upload --repository testpypi dist/* --verbose
+# python -m twine upload --repository testpypi dist/* --verbose

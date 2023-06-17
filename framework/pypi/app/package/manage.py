@@ -22,6 +22,7 @@ name = groupeffect
 version = {self.version}
 description = A Django app to load dev stuff.
 long_description = file: README.md
+long_description_content_type = text/markdown
 url = https://github.com/Groupeffect/groupeffect-pypi
 author = {self.config["author"]}
 author_email = {self.config["email"]}

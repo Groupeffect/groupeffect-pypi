@@ -56,6 +56,10 @@ see example `framework/.pypirc_example`
 
 **Test package**
 
+twine check:
+
+`twine check dist/*`
+
 load test package:
 
 - use setup.cfg for django apps
@@ -66,7 +70,7 @@ load test package:
 
 Once uploaded, your package should be visible on TestPyPI; for example: 
 
-- https://test.pypi.org/project/groupeffect/0.1.0/
+- https://test.pypi.org/project/groupeffect
 
 
 - install test package:
@@ -104,6 +108,10 @@ use pyproject.toml for regular packages
 THEN
 
 `python -m twine upload dist/*`
+
+OR
+
+`python -m twine upload --repository pypi dist/* --verbose`
 
 - install prod package:
 
