@@ -4,6 +4,11 @@ Django app with rest framework integration for fast development
 
 `https://github.com/Groupeffect/groupeffect-pypi/tree/main/framework/pypi/app/package`
 
+**ATTENTION**
+
+This package is currently under development. Do not be confused if something is wrong.
+
+You can join if you have hands-on mentality :)
 
 ## Django integration
 
@@ -32,7 +37,7 @@ Quick start
 
 - https://www.django-rest-framework.org/
 
-## Features
+## Features ( Development status )
 
 - Standard command for setting up apps with rest endpoints:
 
