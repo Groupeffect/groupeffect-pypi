@@ -8,7 +8,7 @@ The main pypi package is saved under `framework/pypi/app/package/groupeffect`
 
 The package README.md can be found under:
 
-`https://github.com/Groupeffect/groupeffect-pypi/blob/main/framework/pypi/app/package/README.md`
+https://github.com/Groupeffect/groupeffect-pypi/blob/main/framework/pypi/app/package/README.md
 
 ## Docker environment
 
@@ -46,7 +46,7 @@ load test package:
 
 `python3 -m twine upload --repository testpypi dist/*`
 
-Once uploaded, your package should be viewable on TestPyPI; for example: 
+Once uploaded, your package should be visible on TestPyPI; for example: 
 
 - https://test.pypi.org/project/groupeffect/0.1.0/
 
@@ -54,6 +54,18 @@ Once uploaded, your package should be viewable on TestPyPI; for example:
 - install test package:
 
 `pip install -i https://test.pypi.org/simple/ groupeffect==0.1.*`
+
+- Test the app in django test project:
+
+go to:
+
+`framework/pypi/app/package/tests/testapp`
+
+and run django commands:
+
+`python manage.py makemigrations`
+
+`python manage.py migrate`
 
 **Production**
 
@@ -75,6 +87,6 @@ THEN
 
 - install prod package:
 
-`pip install -i https://pypi.org/simple/ groupeffect==0.1.*`
+`pip install groupeffect`
 
 
