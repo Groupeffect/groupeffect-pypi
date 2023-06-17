@@ -26,7 +26,25 @@ docker-compose or podman-compose up
 
 ## Pypi
 
-Always update version number !!!
+**Always update version number !!!**
+
+You will find a handy py script for automated version updates under 
+
+`framework/pypi/app/package/manage.py`
+
+run: `python framework/pypi/app/package/manage.py`
+
+to update and overwrite following files:
+
+this file has the current version number and you can change it manually
+
+- `framework/pypi/app/package/VERSION.json`
+
+this file is used for packing do NOT change it manually !
+
+- `framework/pypi/app/package/setup.cfg`
+
+**Authentication for Pypi**
 
 use `framework/.pypirc` for pypi and twine authentication
 
@@ -68,6 +86,8 @@ and run django commands:
 `python manage.py migrate`
 
 **Production**
+
+check the Version, and adjust `VERSION.json` to the current available version number then run `framework/pypi/app/setup.sh` to update files and version. Always run tests before uploading a package.
 
 - load prod package:
 
