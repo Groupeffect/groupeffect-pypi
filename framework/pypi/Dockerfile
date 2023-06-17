@@ -12,4 +12,4 @@ RUN echo "alias poetry='~/.local/bin/poetry'" >> /root/.bashrc
 RUN ~/.local/bin/poetry self update
 WORKDIR /app
 COPY ./app .
-
+RUN pip install -r /app/requirements.txt

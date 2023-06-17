@@ -6,6 +6,11 @@ services:
             context: "./framework/pypi"
             dockerfile: "Dockerfile"
 
+        ports:
+            - "127.0.0.1:8008:8008"
+            - "127.0.0.1:8000:8000"
+
         volumes:
             - "./framework/pypi/app/:/app/"
+            - "./framework/.pypirc:/root/.pypirc"
         command: "bash /app/run.sh"
