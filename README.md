@@ -48,5 +48,7 @@ https://test.pypi.org/project/groupeffect-test/0.1.0/
 # Docker
 
 docker-compose or podman-compose up
+
     - runs.sh : run server for interactive usage
+
     - setup.sh : create package dist and push to test.pypi
