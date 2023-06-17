@@ -1,54 +1,80 @@
 # Groupeffect
-Pypi Project
 
-# Pypi
+This project is a workflow configuration to setup python packages in a dockerized environment.
+
+It contains a pypi package and development scripts to push test and prod packages.
+
+The main pypi package is saved under `framework/pypi/app/package/groupeffect`
+
+The package README.md can be found under:
+
+`https://github.com/Groupeffect/groupeffect-pypi/blob/main/framework/pypi/app/package/README.md`
+
+## Docker environment
+
+docker-compose or podman-compose up 
+
+- `podman-compose build`
+
+- `podman-compose -f docker-compose.yaml up`
+
+- `podman-compose -f docker-compose.yaml up --build --remove-orphans`
+
+- `framework/pypi/app/run.sh` : run server for interactive usage
+
+- `framework/pypi/app/setup.sh` : create package dist and push to test.pypi
+
+## Pypi
 
 Always update version number !!!
 
-username = groupeffect
+use `framework/.pypirc` for pypi and twine authentication
 
-https://test.pypi.org/project/groupeffect-test/0.1.0/
+see example `framework/.pypirc_example`
 
-- load test package:
-    https://packaging.python.org/en/latest/tutorials/packaging-projects/
+**Packaging**
 
-    use setup.cfg
+- https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
-    `python setup.py sdist`
-    
-    `python3 -m twine upload --repository testpypi dist/*`
-    
+**Test package**
 
-    Once uploaded, your package should be viewable on TestPyPI; for example: 
-    
-    - https://test.pypi.org/project/groupeffect-test/0.1.0/
+load test package:
+
+- use setup.cfg for django apps
+
+`python setup.py sdist`
+
+`python3 -m twine upload --repository testpypi dist/*`
+
+Once uploaded, your package should be viewable on TestPyPI; for example: 
+
+- https://test.pypi.org/project/groupeffect/0.1.0/
+
+
+- install test package:
+
+`pip install -i https://test.pypi.org/simple/ groupeffect==0.1.*`
+
+**Production**
 
 - load prod package:
 
-    use setup.cfg for django apps
+use setup.cfg for django apps
 
-    `python setup.py sdist`
+`python setup.py sdist`
 
-    OR
+OR
 
-    use pyproject.toml for regular packages
-   
-    `python -m build`
-   
-    `python -m twine upload dist/*`
-   
+use pyproject.toml for regular packages
 
-- install test package:
-    `pip install -i https://test.pypi.org/simple/ groupeffect==0.1.*`
+`python -m build`
+
+THEN
+
+`python -m twine upload dist/*`
 
 - install prod package:
-    `pip install -i https://pypi.org/simple/ groupeffect==0.1.*`
+
+`pip install -i https://pypi.org/simple/ groupeffect==0.1.*`
 
 
-# Docker
-
-docker-compose or podman-compose up
-
-    - runs.sh : run server for interactive usage
-
-    - setup.sh : create package dist and push to test.pypi
