@@ -1,6 +1,5 @@
 import os
 import json
-from typing import Any, List, Dict
 from django.core.management.base import BaseCommand, CommandParser
 from django.conf import settings
 from django.utils.module_loading import import_string
@@ -128,6 +127,10 @@ class Configurator:
         try:
             self.tasks += [
                 import_string("groupeffect.management.tasks.default.DefaultTask"),
+                import_string("groupeffect.management.tasks.default.CreateAppTask"),
+                import_string(
+                    "groupeffect.management.tasks.default.CreateConfigurationJsonFileTask"
+                ),
             ]
         except Exception as e:
             self.errors.append(e)

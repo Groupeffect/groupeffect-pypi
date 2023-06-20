@@ -1,8 +1,8 @@
-from api.serializers.organization import Organization
 from rest_framework import serializers
+from api.database.organization import Namespace 
 
 
-class OrganizationModelSerializer(serializers.ModelSerializer):
+class NamespaceModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Organization
+        model = Namespace
         fields = "__all__"

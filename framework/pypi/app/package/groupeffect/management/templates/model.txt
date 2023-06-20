@@ -1,2 +1,0 @@
-class {{service}}Model(models.Model):
-    name = models.CharField()

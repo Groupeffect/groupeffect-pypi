@@ -145,9 +145,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# GROUPEFFECT_MANAGEMENT_TASKS = [
-#     "groupeffect.tasks.CreateAppTask",
-#     "groupeffect.tasks.CreateConfigurationJsonFileTask",
-# ]
+GROUPEFFECT_MANAGEMENT_TASKS = [
+    "development.tasks.CreateAppTask",
+    "development.tasks.CreateConfigurationJsonFileTask",
+]
 
 # GROUPEFFECT_CONFIG_JSON_FILE_PATH = "/app/package/tests/testapp/api/app.json"

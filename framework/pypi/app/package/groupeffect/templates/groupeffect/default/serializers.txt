@@ -1,0 +1,8 @@
+from rest_framework import serializers
+from {{ app }}.database.{{ service }} import {{ model|capfirst }} 
+
+
+class {{ model|capfirst }}ModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = {{ model|capfirst }}
+        fields = "__all__"

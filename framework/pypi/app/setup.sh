@@ -6,7 +6,7 @@
 
 rm -drf /app/package/dist
 pip uninstall groupeffect -y
-cp -r /app/package/tests/testapp/development/management /app/package/groupeffect/
+# cp -r /app/package/tests/testapp/development/management /app/package/groupeffect/
 ## Update version number
 # python /app/package/manage.py
 

@@ -2,15 +2,8 @@
     {
         "app": "api",
         "service":"organization",
-        "models":["Organization", "Company"],
-        "structure": ["database","serializers", "views","urls"],
+        "model":"namespace",
+        "structure": ["database","serializers", "views","urls", "tests"],
         "schema": "default"
-    },  
-    {
-        "app": "api",
-        "service":"organization",
-        "models":["Profile"],
-        "structure": ["tests"],
-        "schema": "sdo"
     }
 ]   

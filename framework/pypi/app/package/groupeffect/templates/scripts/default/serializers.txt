@@ -1,7 +1,0 @@
-from rest_framework import serializers
-from {{ database }} import {{ model }} 
-
-class {{ name }}ModelSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = {{ model }}
-        fields = "__all__"
