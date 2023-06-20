@@ -12,7 +12,7 @@ https://github.com/Groupeffect/groupeffect-pypi/blob/main/framework/pypi/app/pac
 
 ## Docker environment
 
-docker-compose or podman-compose up 
+**docker-compose or podman-compose up** 
 
 - `podman-compose build`
 
@@ -20,7 +20,11 @@ docker-compose or podman-compose up
 
 - `podman-compose -f docker-compose.yaml up --build --remove-orphans`
 
+**Development scripts**
+
 - `framework/pypi/app/run.sh` : run server for interactive usage
+
+- `framework/pypi/app/dev.sh` : create package dist and install locally
 
 - `framework/pypi/app/setup.sh` : create package dist and push to test.pypi
 
