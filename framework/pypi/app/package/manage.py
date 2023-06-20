@@ -20,7 +20,7 @@ class VersionUpdate:
         return f"""[metadata]
 name = groupeffect
 version = {self.version}
-description = A Django app to load dev stuff.
+description = A Django app for fast api development.
 long_description = file: README.md
 long_description_content_type = text/markdown
 url = https://github.com/Groupeffect/groupeffect-pypi
