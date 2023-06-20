@@ -1,1 +1,0 @@
-from groupeffect.database.main import GroupeffectNamespace

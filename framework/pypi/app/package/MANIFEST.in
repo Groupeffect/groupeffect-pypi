@@ -1,3 +1,5 @@
 include LICENSE
 include README.md
-recursive-include groupeffect/templates *
+include VERSION.json
+recursive-include groupeffect/ *
+recursive-include groupeffect/templates *.txt *.html

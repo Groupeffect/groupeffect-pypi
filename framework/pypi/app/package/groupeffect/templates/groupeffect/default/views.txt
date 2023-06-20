@@ -1,0 +1,11 @@
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAdminUser
+from {{ app }}.serializers.{{ service }} import {{ model|capfirst }}ModelSerializer
+
+class {{ model|capfirst }}ModelViewSet(ModelViewSet):
+
+    serializer_class = {{ model|capfirst }}ModelSerializer
+    permission_classes = [IsAdminUser]
+
+    def get_queryset(self):
+        return self.serializer_class.Meta.model.objects.all()
