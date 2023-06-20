@@ -75,7 +75,7 @@ Once uploaded, your package should be visible on TestPyPI; for example:
 
 - install test package:
 
-`pip install -i https://test.pypi.org/simple/ groupeffect==0.1.*`
+`pip install -i https://test.pypi.org/simple groupeffect`
 
 - Test the app in django test project:
 

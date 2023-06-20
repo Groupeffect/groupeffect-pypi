@@ -2,9 +2,15 @@
 
 Django app with rest framework integration for fast development.
 Write task classes instead of management commands for faster cli integrations.
-Run enhanced `startapp` command to generate boilerplate `ModeViewSets` from a configuration file.
+Run enhanced `startapp` command to generate boilerplate `ModelViewSets` from a configuration file.
+
+**Package code on Github**
 
 https://github.com/Groupeffect/groupeffect-pypi/tree/main/framework/pypi/app/package
+
+**Development code on Github**
+
+https://github.com/Groupeffect/groupeffect-pypi
 
 
 # Quick start
@@ -16,11 +22,6 @@ https://github.com/Groupeffect/groupeffect-pypi/tree/main/framework/pypi/app/pac
         groupeffect,
         ...
     ]
-
-`python manage.py makemigrations` -> add Namespace model 
-
-`python manage.py migrate` -> migrates Namespace model 
-
 
 ## Requirements
 
@@ -47,14 +48,18 @@ https://github.com/Groupeffect/groupeffect-pypi/tree/main/framework/pypi/app/pac
 `python manage.py effect -h`
 
 - create config file
+
+    - in BASE_DIR folder  
     
-    - in app folder, provide app name  
+        `python manage.py effect -c create -t config`
     
-    `python manage.py effect -c create -t config -n api`
+    - in app folder 'api', provide app name with -n flag  
+    
+        `python manage.py effect -c create -t config -n api`
     
     - at certain path, provide path
     
-    `python manage.py effect -c create -t config -p /app/package/tests/testapp/api`
+        `python manage.py effect -c create -t config -p /app/package/tests/testapp/api`
 
 - startapp with nested folders
 
@@ -62,12 +67,12 @@ https://github.com/Groupeffect/groupeffect-pypi/tree/main/framework/pypi/app/pac
 
     `GROUPEFFECT_CONFIG_JSON_FILE_PATH`
 
-    `python manage.py effect -c app -t start -t config`
+    `python manage.py effect -c app -t start`
 
 
 **Tasks** 
 
-You can add task classes to the array. They will be called by the `effect` command and the `configuration` and `options` will be passed to the `__init__` function as `**context`. You can also find `Configurator` and `Command` classes in the `management.commands.effect` module. They will handle cli inputs, json file upload and task classes. Feel free to fit them to your needs.
+You can add task classes to the GROUPEFFECT_MANAGEMENT_TASKS array. They will be called by the `effect` command and the `configuration` and `options` will be passed to the `__init__` function as `**context`. You can also find `Configurator` and `Command` classes in the `management.commands.effect` module. They will handle cli inputs, json file upload and task classes. Feel free to fit them to your needs. You have to set the command and tasks functions in your `TaskClass`.
 
 Example: 
 
