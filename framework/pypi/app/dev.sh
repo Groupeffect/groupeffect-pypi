@@ -15,3 +15,4 @@ cd /app/package && python setup.py sdist
 pip install /app/package/dist/*
 ## Upload package
 # python -m twine upload --repository testpypi dist/* --verbose
+# python -m twine upload --repository pypi dist/* --verbose
