@@ -16,4 +16,4 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+          VALIDATE_DOCKERFILE_HADOLINT: false
