@@ -1,7 +1,7 @@
-import os
 import json
-from django.core.management.base import BaseCommand, CommandParser
+import os
 from django.conf import settings
+from django.core.management.base import BaseCommand, CommandParser
 from django.utils.module_loading import import_string
 
 
@@ -144,7 +144,8 @@ class Configurator:
                 self.configuration = json.load(f)
         else:
             self.errors.append(
-                f"{self.config_file} does not exists. You can add this file manually if you want. Or add GROUPEFFECT_CONFIG_JSON_FILE_PATH to your settings.py"
+                f"""{self.config_file} does not exists. You can add this file manually if you want.
+Or add GROUPEFFECT_CONFIG_JSON_FILE_PATH to your settings.py"""
             )
 
 
@@ -158,13 +159,11 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser: CommandParser) -> None:
         # https://docs.python.org/3/library/argparse.html#action
-
         for config in self.cli_options:
             if "args" in config and "kwargs" in config:
                 parser.add_argument(*config["args"], **config["kwargs"])
 
     def handle(self, *args, **options) -> str | None:
-
         # Setup configurator
         self.config = self.configurator(options)
 

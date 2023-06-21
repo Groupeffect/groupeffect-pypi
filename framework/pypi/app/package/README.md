@@ -12,6 +12,14 @@ https://github.com/Groupeffect/groupeffect-pypi/tree/main/framework/pypi/app/pac
 
 https://github.com/Groupeffect/groupeffect-pypi
 
+**PyPi package**
+
+https://pypi.org/project/groupeffect/
+
+**Django package**
+
+https://djangopackages.org/packages/p/groupeffect/
+
 
 # Quick start
 

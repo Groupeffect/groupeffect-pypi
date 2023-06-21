@@ -1,9 +1,9 @@
 import os
-from django.utils.module_loading import import_string
 import shutil
 from django.conf import settings
 from django.core.management import call_command
 from django.template.loader import get_template
+from django.utils.module_loading import import_string
 
 
 class MetaTask:
