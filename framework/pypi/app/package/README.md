@@ -1,4 +1,4 @@
-# GROUPEFFECT-PYPI
+# Groupeffect reusable Django app  
 
 Django app with rest framework integration for fast development.
 Write task classes instead of management commands for faster cli integrations.

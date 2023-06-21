@@ -1,4 +1,4 @@
-# Groupeffect
+# Groupeffect Pypi development 
 
 This project is a workflow configuration to setup python packages in a dockerized environment.
 
