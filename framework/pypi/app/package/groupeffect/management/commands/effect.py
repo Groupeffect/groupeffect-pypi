@@ -90,6 +90,16 @@ GROUPEFFECT_CLI_OPTIONS = [
             "help": "Prefix for something",
         },
     },
+    {
+        "key": "a",
+        "value": "argument",
+        "args": ["-a", "--argument"],
+        "kwargs": {
+            "nargs": "?",
+            "help": "Argument for something",
+            "action": "append",
+        },
+    },
 ]
 
 
@@ -117,21 +127,33 @@ class Configurator:
             )
         self.read_config_json()
 
-        self.tasks = []
+        self.tasks = [
+            import_string("groupeffect.management.tasks.default.DefaultTask"),
+            import_string("groupeffect.management.tasks.default.CreateAppTask"),
+            import_string(
+                "groupeffect.management.tasks.default.CreateConfigurationJsonFileTask"
+            ),
+        ]
         try:
-            self.tasks += [
+            self.tasks = [
                 import_string(i) for i in settings.GROUPEFFECT_MANAGEMENT_TASKS
             ]
-        except Exception as e:
-            self.errors.append(e)
-        try:
-            self.tasks += [
-                import_string("groupeffect.management.tasks.default.DefaultTask"),
-                import_string("groupeffect.management.tasks.default.CreateAppTask"),
-                import_string(
-                    "groupeffect.management.tasks.default.CreateConfigurationJsonFileTask"
-                ),
-            ]
+            self.success.append(
+                """
+You changed the default tasks they are no longer available.
+If you want to keep the default tasks.
+you can add:
+
+    groupeffect.management.tasks.default.DefaultTask,
+    groupeffect.management.tasks.default.CreateAppTask,
+    groupeffect.management.tasks.default.CreateConfigurationJsonFileTask,
+
+to:
+
+GROUPEFFECT_MANAGEMENT_TASKS
+
+"""
+            )
         except Exception as e:
             self.errors.append(e)
 
