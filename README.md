@@ -121,4 +121,8 @@ OR
 
 `pip install groupeffect`
 
+### Versioning releases
 
+git tag -a v0.2.5 -m "Release version 0.2.5"
+
+git push origin v0.2.5
