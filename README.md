@@ -97,11 +97,6 @@ and run django commands:
 
 check the Version, and adjust `VERSION.json` to the current available version number then run `framework/pypi/app/setup.sh` to update files and version. Always run tests before uploading a package.
 
-    - install test package:
-        `pip install -i https://test.pypi.org/simple/ groupeffect-test==0.1.0`
-
-## Production
-
 - load prod package:
 
 use setup.cfg for django apps
