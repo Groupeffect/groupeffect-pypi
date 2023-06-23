@@ -12,7 +12,8 @@
 - Create boilerplate Django REST framework apps for fast development from configuration files and script templates with `effect -c app -t start`.
 - Run multiple tasks with the same command in an array of tasks if you like. Write task classes instead of management commands for faster cli integrations.
 - Custom configurations and templates can be implemented to create different boilerplate apps.
-- Create scripts and templates that can be controlled by management commands and chain them for a better workflow and development experience.
+- The purpose is to create scripts and templates that can be controlled by management commands and the option to chain them together for a better workflow and development experience.
+- The goal is to simplify complex processes or commands with automated task classes and allow them to trigger other processes with the django `call_command` function.   
 
 **Contains**
 
@@ -24,7 +25,7 @@
 
 `groupeffect.management.tasks.default`
     
-- Python script  and Html templates 
+- Python script and Html templates 
 
 `groupeffect.templates`
     
@@ -130,6 +131,7 @@ Each dictionary entry must have a different app name otherwise the "app exists" 
 The cli command `python manage.py effect` is the minimum to run the `Command` class which is needed to run the task classes in an array. The available options are generic flags and can behave differently with different task classes. The task classes are responsible for the option input handling. The idea is that you can run multiple tasks with the same command if you want.
 
 **debug log:**
+
 current configuration available tasks and cli options 
 
 `python manage.py effect -d`
@@ -155,9 +157,15 @@ current configuration available tasks and cli options
     `python manage.py effect -c create -t config -p /app/package/tests/testapp/api`
 
 
-**start app with nested folders rom config file**
+**start app with nested folders from config file**
 
-    `python manage.py effect -c app -t start --name api`
+- short
+
+    `python manage.py effect -c app -t start`
+
+- custom from cli 
+
+    `python manage.py effect -c app -t start --name api --model Namespace --service organization --schema default`
 
 **run multiple commands with `groupeffect.management.tasks.default.DefaultTask` class**
 

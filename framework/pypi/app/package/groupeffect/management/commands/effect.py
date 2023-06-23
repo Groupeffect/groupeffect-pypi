@@ -64,9 +64,27 @@ GROUPEFFECT_CLI_OPTIONS = [
         },
     },
     {
+        "key": "model",
+        "value": "Namespace",
+        "args": ["-mo", "--model"],
+        "kwargs": {
+            "nargs": "?",
+            "help": "Model name",
+        },
+    },
+    {
+        "key": "schema",
+        "value": "default",
+        "args": ["-sc", "--schema"],
+        "kwargs": {
+            "nargs": "?",
+            "help": "Schema name",
+        },
+    },
+    {
         "key": "service",
         "value": "api",
-        "args": ["-s", "--service-name"],
+        "args": ["-s", "--service"],
         "kwargs": {
             "nargs": "?",
             "help": "Service name",
@@ -91,7 +109,7 @@ GROUPEFFECT_CLI_OPTIONS = [
         },
     },
     {
-        "key": "a",
+        "key": "argument",
         "value": "argument",
         "args": ["-a", "--argument"],
         "kwargs": {

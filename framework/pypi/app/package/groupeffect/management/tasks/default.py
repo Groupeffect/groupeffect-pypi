@@ -218,11 +218,18 @@ class CreateAppTask(MetaTask):
         )
 
     def handle_config(self, config):
-        app = config.get("app", "api")
-        service = config.get("service", "service")
-        model = config.get("model", "Organization")
+        app, service, model, schema = (
+            self.options.get("name"),
+            self.options.get("service"),
+            self.options.get("model"),
+            self.options.get("schema"),
+        )
+
+        app = app if app else config.get("name", "api")
+        service = service if service else config.get("service", "organization")
+        model = model if model else config.get("model", "Namespace")
+        schema = schema if schema else config.get("schema", "default")
         structure = config.get("structure", [])
-        schema = config.get("schema", "default")
 
         call_command("startapp", app)
 
