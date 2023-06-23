@@ -1,3 +1,0 @@
-# GROUPEFFECT
-
-development stuff

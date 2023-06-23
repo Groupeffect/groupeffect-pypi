@@ -1,0 +1,9 @@
+[
+    {
+        "app": "api",
+        "service":"organization",
+        "model":"namespace",
+        "structure": ["database","serializers", "views","urls", "tests"],
+        "schema": "default"
+    }
+]   
